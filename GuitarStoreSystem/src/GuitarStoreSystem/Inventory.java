@@ -11,8 +11,7 @@ public class Inventory {
 		guitars = new LinkedList<>();
 	}
 
-	public void addGuitar(String serialNumber, double price, Builder builder,
-		String model, Type type, Wood backWood, Wood topWood) {
+	public void addGuitar(String serialNumber, double price, Builder builder, String model, Type type, Wood backWood, Wood topWood) {
 		Guitar guitar = new Guitar(serialNumber, price, builder, model, type, backWood, topWood);
 		guitars.add(guitar);
 	}
@@ -35,8 +34,7 @@ public class Inventory {
 				continue;
 
 			String model = searchSpec.getModel().toLowerCase();
-			if ((model != null) && (!model.equals("")) &&
-				(!model.equals(guitarSpec.getModel().toLowerCase())))
+			if ((model != null) && (!model.equals("")) && (!model.equals(guitarSpec.getModel().toLowerCase())))
 				continue;
 
 			if (searchSpec.getType() != guitarSpec.getType())
@@ -47,6 +45,7 @@ public class Inventory {
 
 			if (searchSpec.getTopWood() != guitarSpec.getTopWood())
 				continue;
+			
 			matchingGuitars.add(guitar);
 		}
 		return matchingGuitars;
